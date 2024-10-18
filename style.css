@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #548687;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s;
+}
+
+body.dark {
+    background-color: #333;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #ffffc7;
+    cursor: pointer;
+}
+
+#reset-btn, #undo-btn, #theme-btn, #new-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: #ffffff;
+    border-radius: 1rem;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+#msg {
+    color: #ffffc7;
+    font-size: 2rem;
+}
+
+/* Winner message styling - make it fixed and centered */
+.msg-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    z-index: 1000; /* Ensure it's always on top */
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.msg-container.show {
+    display: flex; /* Show when there's a winner */
+}
+
+.hide {
+    display: none;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.dark .box {
+    background-color: #444;
+    color: #ffffff;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
